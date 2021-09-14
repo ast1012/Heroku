@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title> Student Mark Predictor ML App</title>
+    <style>
+        h1  {color:blue;} /*CSS code for heading h1*/
+        /* CSS code button */
+        .button_css{
+        color: #494949 !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #ffffff;
+        padding: 20px;
+        border: 4px solid #494949 !important;
+        display: inline-block;
+        transition: all 0.4s ease 0s;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+    <img src = "static\images\clg_image.jpg" class="w3-border w3-padding" alt="Astha Kashyap" style="width:100%">
+    </div>
+
+    <div class = "Login">
+
+        <center>
+        <form action="{{url_for('predict')}}" method="post">
+            <h1>*** Enter Your Hours of Study to Predict Marks ***</h1>
+            <input align="center" type="number" name="study_hours" placeholder="study hours" required="required" width="48" height='12'>
+            <br>
+
+            <br>
+
+            <div class = "button_cont" align="center"><a class="button_css" href="http://bit.ly/breast-cancer-ml-project" target="_blank" rel="nofollow noopner">
+                <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Marks</strong></button></a>
+            </div>
+        </form>
+        </center>
+    </div>
+
+    <div>
+        <center>
+    <h2>{{ prediction_text }}</h2>
+        </center>
+    </div>
+</body>
+</html>
